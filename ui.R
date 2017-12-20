@@ -39,5 +39,10 @@ ui <- fluidPage(
     mainPanel(
       imageOutput("shape", width = "100%", height = "100%")
     )
+  ),
+  tags$footer(
+    tags$a(href = "https://github.com/vankesteren/shapie", 
+           target = "_blank",
+           "view on GitHub")
   )
 )

@@ -16,3 +16,8 @@ label {
   background: none;
   border: none;
 }
+
+footer {
+  text-align: right;
+  padding: 1em;
+}
