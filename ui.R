@@ -23,18 +23,21 @@ library(digest)
 
 # Define UI for application
 ui <- fluidPage(
-   titlePanel("shapie: convert your text to a unique shape", 
-              windowTitle = "shapie"),
-   
-   sidebarLayout(
-      sidebarPanel(
-         textInput(inputId = "string", 
-                   label = "Enter your text here:", value = "")
-      ),
-      
-      # Show a plot of the generated distribution
-      mainPanel(
-        imageOutput("shape", width = "100%", height = "100%")
-      )
-   )
+  tags$head(
+    tags$link(rel="stylesheet", href="https://code.cdn.mozilla.net/fonts/fira.css"),
+    tags$link(rel="stylesheet", href="main.css")
+  ),
+  
+  titlePanel("shapie: convert your text to a unique shape", 
+          windowTitle = "shapie"),
+  
+  sidebarLayout(
+    sidebarPanel(
+       textInput(inputId = "string", 
+                 label = "Enter your text here:", value = "")
+    ),
+    mainPanel(
+      imageOutput("shape", width = "100%", height = "100%")
+    )
+  )
 )
