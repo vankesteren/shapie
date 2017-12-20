@@ -18,7 +18,6 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 
-source("helpers.R")
 server <- function(input, output) {
   output$shape <- renderImage(
     drawShape(theta, seed = nameToNumber(input$string), alt = input$string)

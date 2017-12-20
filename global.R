@@ -40,8 +40,8 @@ drawShape <- function(theta, seed, alt = "shape",
                       colfun = rainbow) {
   set.seed(seed)
   cols <- colfun(nlines)
-  tmp <- tempfile(fileext = ".png")
-  png(tmp, width = 300/72*600, height = 300/72*600, res = 600)
+  tmp <- tempfile(fileext = ".svg")
+  svg(tmp, width = 7, height = 7)
   par(mar = c(0,0,0,0), bg = "black")
   plot(c(-1, 1), c(-1, 1), type = "n", axes = F, xlab = "", ylab = "")
   for (i in 1:nlines) {
@@ -53,6 +53,6 @@ drawShape <- function(theta, seed, alt = "shape",
   }
   dev.off()
   
-  return(list(src = tmp, contentType = "image/png", 
+  return(list(src = tmp, contentType = "image/svg+xml", 
               style = "max-width:100%;max-height:100%;"))
 }
