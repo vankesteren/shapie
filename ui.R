@@ -19,7 +19,6 @@
 #  SOFTWARE.
 
 library(shiny)
-library(truncnorm)
 library(digest)
 
 # Define UI for application

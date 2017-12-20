@@ -45,11 +45,11 @@ drawShape <- function(theta, seed, alt = "shape",
   par(mar = c(0,0,0,0), bg = "black")
   plot(c(-1, 1), c(-1, 1), type = "n", axes = F, xlab = "", ylab = "")
   for (i in 1:nlines) {
-    xparams <- rtruncnorm(complexity, -0.5, 0.5, 0, 0.25)
-    yparams <- rtruncnorm(complexity, -0.5, 0.5, 0, 0.25)
+    xparams <- runif(complexity, -0.5, 0.5)
+    yparams <- runif(complexity, -0.5, 0.5)
     x <- sin(theta[,1:complexity])%*%xparams
     y <- cos(theta[,1:complexity])%*%yparams
-    lines(x = x, y = y, col = cols[i])
+    lines(x = x, y = y, col = cols[i], lwd = 2)
   }
   dev.off()
   
